@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 2 - Data Pegawai</title>
+    <style>
+        body {
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        thead tr {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #4b5452;
+        }
+        /* Memusatkan teks di kolom pertama (nomor) */
+        tbody td:first-child {
+            text-align: center;
+        }
+        tfoot {
+            font-weight: bold;
+            background-color: #333;
+            color: #ffffff;
+        }
+        .footer {
+            width: 100%;
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute; 
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // Data Pegawai
+        let namaPegawai = "Dodi Prayodi";
+        let umur = 25;
+        let jabatan = "Manajer";
+        let status = "Menikah";
+
+        // Gaji Pokok
+        let gajiPokok;
+        if (jabatan === "Manajer") {
+            gajiPokok = 15000000;
+        } else if (jabatan === "Asisten Manajer") {
+            gajiPokok = 10000000;
+        } else { // Asumsi: Staff
+            gajiPokok = 5000000;
+        }
+
+        // Tunjangan Jabatan (15% dari Gaji Pokok)
+        let tunjanganJabatan = 0.15 * gajiPokok;
+
+        // BPJS (10% dari Gaji Pokok)
+        let bpjs = 0.10 * gajiPokok;
+
+        // Tunjangan Keluarga (ternary)
+        let tunjanganKeluarga = (status === "Menikah") ? (0.20 * gajiPokok) : 0;
+
+        // Total Gaji
+        let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+        // Menampilkan tabel data pegawai
+        document.write("<table>");
+        document.write("<thead>");
+        document.write("<tr>");
+        document.write("<th>No</th>");
+        document.write("<th>Deskripsi</th>");
+        document.write("<th>Nilai</th>");
+        document.write("</tr>");
+        document.write("</thead>");
+        document.write("<tbody>");
+        document.write("<tr><td>1</td><td>Nama Pegawai</td><td>" + namaPegawai + "</td></tr>");
+        document.write("<tr><td>2</td><td>Umur</td><td>" + umur + " tahun</td></tr>");
+        document.write("<tr><td>3</td><td>Jabatan</td><td>" + jabatan + "</td></tr>");
+        document.write("<tr><td>4</td><td>Status</td><td>" + status + "</td></tr>");
+        document.write("<tr><td>5</td><td>Gaji Pokok</td><td>Rp " + gajiPokok.toLocaleString('id-ID') + "</td></tr>");
+        document.write("<tr><td>6</td><td>Tunjangan Jabatan (15%)</td><td>Rp " + tunjanganJabatan.toLocaleString('id-ID') + "</td></tr>");
+        document.write("<tr><td>7</td><td>BPJS (10%)</td><td>Rp " + bpjs.toLocaleString('id-ID') + "</td></tr>");
+        document.write("<tr><td>8</td><td>Tunjangan Keluarga (20%)</td><td>Rp " + tunjanganKeluarga.toLocaleString('id-ID') + "</td></tr>");
+        document.write("</tbody>");
+        document.write("<tfoot>");
+        document.write("<tr>");
+        document.write("<td colspan='2' style='text-align: center;'><b>Total Gaji</b></td>");
+        document.write("<td><b>Rp " + totalGaji.toLocaleString('id-ID') + "</b></td>");
+        document.write("</tr>");
+        document.write("</tfoot>");
+        document.write("</table>");
+    </script>
+
+    <div class="footer">
+        <p>&copy; 2025 Tugas Menghitung Ternary Tanggal 18 September <br> Dibuat oleh Aisyah Salsabila Azzahrah</p>
+        <p>Politeknik Negeri Sriwijaya</p>
+    </div>
+
+</body>
+</html>
