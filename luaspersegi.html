@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 1 - Perhitungan Luas Bangun Datar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center; /* Memusatkan semua teks dalam body */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #4CAF50;
+        }
+        
+        #persegi-panjang h2 {
+            color: #E91E63; /* Pink */
+        }
+        
+        #bujur-sangkar h2 {
+            color: #2196F3; /* Biru */
+        }
+        
+        #segitiga h2 {
+            color: #FF9800; /* Oranye */
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Perhitungan Luas Bangun Datar</h1>
+
+        <div id="persegi-panjang">
+            <script>
+                // 1. Perhitungan Luas Persegi Panjang
+                let panjang = 10;
+                let lebar = 5;
+                let luasPersegiPanjang = panjang * lebar;
+
+                document.write("<h2>Luas Persegi Panjang</h2>");
+                document.write("Panjang: " + panjang + " cm <br>");
+                document.write("Lebar: " + lebar + " cm <br>");
+                document.write("Luas: " + luasPersegiPanjang + " cm²");
+            </script>
+        </div>
+        <hr>
+        
+        <div id="bujur-sangkar">
+            <script>
+                // 2. Perhitungan Luas Bujur Sangkar
+                let sisi = 8;
+                let luasBujurSangkar = sisi * sisi;
+
+                document.write("<h2>Luas Bujur Sangkar</h2>");
+                document.write("Sisi: " + sisi + " cm <br>");
+                document.write("Luas: " + luasBujurSangkar + " cm²");
+            </script>
+        </div>
+        <hr>
+
+        <div id="segitiga">
+            <script>
+                // 3. Perhitungan Luas Segitiga
+                let alas = 12;
+                let tinggi = 6;
+                let luasSegitiga = 0.5 * alas * tinggi;
+
+                document.write("<h2>Luas Segitiga</h2>");
+                document.write("Alas: " + alas + " cm <br>");
+                document.write("Tinggi: " + tinggi + " cm <br>");
+                document.write("Luas: " + luasSegitiga + " cm²");
+            </script>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Dibuat oleh: <br>
+            Aisyah Salsabila FWD1 Politeknik Negeri Sriwijaya</p> 
+    </footer>
+
+</body>
+</html>
